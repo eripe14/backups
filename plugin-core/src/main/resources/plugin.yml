@@ -1,7 +1,5 @@
-main: "cc.dreamcode.template.TemplatePlugin"
-version: "1.0-InDEV"
-name: "Dream-Template"
-description: "Dream-Template plugin written by dreamcode.cc"
-website: "https://dreamcode.cc"
-author: "author"
+main: "com.eripe14.backups.BackupPlugin"
+version: "1.0.0"
+name: "Backups"
+author: "eripe14"
 api-version: 1.13
