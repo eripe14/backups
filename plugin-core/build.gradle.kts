@@ -12,10 +12,10 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
 
     // -- dream-platform --
-    implementation("cc.dreamcode.platform:bukkit:1.13.4")
-    implementation("cc.dreamcode.platform:bukkit-config:1.13.4")
-    implementation("cc.dreamcode.platform:dream-command:1.13.4")
-    implementation("cc.dreamcode.platform:persistence:1.13.4")
+    implementation("cc.dreamcode.platform:bukkit:1.13.8")
+    implementation("cc.dreamcode.platform:bukkit-config:1.13.8")
+    implementation("cc.dreamcode.platform:dream-command:1.13.8")
+    implementation("cc.dreamcode.platform:persistence:1.13.8")
 
     implementation("net.kyori:adventure-text-minimessage:4.22.0")
 
