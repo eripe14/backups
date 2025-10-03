@@ -1,24 +1,40 @@
-Working with template:
------
-Take a loot at [Dream-Otchlan](https://github.com/DreamPoland/dream-otchlan), example project based on platform.
+A comprehensive Bukkit plugin that automatically creates backups of a player's inventory, armor, ender chest, and experience upon death. Administrators can manage these backups through an intuitive GUI, grant restoration rights, and players can easily reclaim their items.
 
-**Required:**
------
-- Spigot-api 1.8.8 with NMS support.
-- JDK 21, target 1.8 for compatibility.
+## Features
 
-------
+- **Automatic Death Backups:** Creates a complete snapshot of a player's state upon death, including their inventory, armor, ender chest, experience, killer, and cause of death.
+- **Intuitive GUI Management:** Administrators can browse, view, and manage all player backups using the `/backup` command.
+- **Detailed Backup Inspection:** View the exact contents of a player's inventory, armor, and ender chest from a specific backup.
+- **Backup Restoration System:** Admins can grant a backup to a player. The player is then notified and can restore their items using the `/odbierz-backup` command.
+- **Customizable Player Notifications:** Utilizes a Boss Bar and chat messages to inform players when they have a granted backup available for restoration.
+- **Advanced Sorting & Filtering:** The backup list can be sorted by date (newest/oldest) or by granted status.
+- **Automatic Cleanup:** Backups are automatically deleted after a configurable period to save storage space.
+- **Highly Configurable:** Customize nearly every aspect, including all GUIs, items, messages, and timings, via easy-to-edit YAML files.
+- **Flexible Data Storage:** Powered by okaeri-persistence, allowing for various storage backends like Flat-file, MariaDB/MySQL, and MongoDB.
 
-**Libraries**: <33
-- [Dream-Platform](https://github.com/DreamPoland/dream-platform) by [DreamCode](https://github.com/DreamPoland)
-- [Dream-Menu](https://github.com/DreamPoland/dream-menu) by [DreamCode](https://github.com/DreamPoland)
-- [Dream-Command](https://github.com/DreamPoland/dream-command) by [DreamCode](https://github.com/DreamPoland)
-- [Dream-Notice](https://github.com/DreamPoland/dream-notice) by [DreamCode](https://github.com/DreamPoland)
-- [Dream-Utilities](https://github.com/DreamPoland/dream-utilities) by [DreamCode](https://github.com/DreamPoland)
-- [Okaeri-Configs](https://github.com/OkaeriPoland/okaeri-configs) by [Okaeri](https://github.com/OkaeriPoland)
-- [Okaeri-Persistence](https://github.com/OkaeriPoland/okaeri-persistence) by [Okaeri](https://github.com/OkaeriPoland)
-- [Okaeri-Injector](https://github.com/OkaeriPoland/okaeri-injector) by [Okaeri](https://github.com/OkaeriPoland)
-- [Okaeri-Placeholders](https://github.com/OkaeriPoland/okaeri-placeholders) by [Okaeri](https://github.com/OkaeriPoland)
-- [Okaeri-Tasker](https://github.com/OkaeriPoland/okaeri-tasker) by [Okaeri](https://github.com/OkaeriPoland)
-- [XSeries](https://github.com/CryptoMorin/XSeries) by [CryptoMorin](https://github.com/CryptoMorin)
-- and [Lombok](https://github.com/projectlombok/lombok) for clean dev by [ProjectLombok](https://github.com/projectlombok)
+## Commands & Permissions
+
+| Command              | Description                                                             | Permission         |
+| -------------------- | ----------------------------------------------------------------------- | ------------------ |
+| `/backup <player>`   | Opens the administrative menu to view and manage backups for a player.  | `backups.view`     |
+| `/backup reload`     | Reloads the plugin's configuration files.                               | `backups.reload`   |
+| `/odbierz-backup`    | Allows a player to open the menu to claim a granted backup.             | `backups.receive`  |
+
+## Installation
+
+1.  Download the latest `.jar` file from the [Releases](https://github.com/eripe14/backups/releases) page.
+2.  Place the downloaded `.jar` file into your server's `plugins/` directory.
+3.  Start your server to generate the configuration files (`config.yml` and `message.yml`).
+4.  Open `config.yml` and configure your database settings under the `storage-config` section.
+5.  Restart the server to apply the changes.
+
+## Configuration
+
+The plugin's behavior is controlled by two main files located in the `plugins/Backups/` directory:
+
+-   `config.yml`: Contains settings for database connection, backup expiration time, Boss Bar appearance, and the complete layout and item customization for all GUIs.
+-   `message.yml`: Contains all user-facing messages, allowing for full translation and personalization.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENCE](LICENCE) file for details.
